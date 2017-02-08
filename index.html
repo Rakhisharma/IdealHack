@@ -30,7 +30,7 @@
     </div>
 </head>
 <body>
-<h4>Enter Amount you want to donate</h4><form name="donationForm" action="#" onclick="return validateForm()"><input type="number" min="1" name="fname" class="content"><input type="submit" value="Submit" class="btn" id="btn"></form>
+<h4>Enter Amount you want to donate</h4><form name="donationForm" action="#" onclick="return validateForm()"><input type="number" min="1" name="amount" class="content"><input type="submit" value="Submit" class="btn" id="btn"></form>
 <!-- The popup -->
 <div id="mypopup" class="popup">
 
@@ -56,7 +56,7 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, if condition satisfied then open the popup 
 btn.onclick = function validateForm() {
-    var x = document.forms["donationForm"]["fname"].value;
+    var x = document.forms["donationForm"]["amount"].value;
     if (x >= 1) {
     popup.style.display = "block";
   }
