@@ -1,3 +1,10 @@
+<DOCTYPE!>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="index.css"><!-- 
+<script type="text/javascript" src="index.js"></script> -->
+</head>
+<body>
 <div class="container">
   <h1>Fund This Project</h1>
   
@@ -20,14 +27,50 @@
     <div class="col-half">
       <a href="#" class="btn">Tell your friends</a>
     </div>
-<!--     <div class="col-half">
-      <a href="#" class="btn">Submit</a>
+</head>
+<body>
+<h4>Enter Amount you want to donate</h4><form name="donationForm" action="#" onclick="return validateForm()"><input type="number" min="1" name="fname" class="content"><input type="submit" value="Submit" class="btn" id="btn"></form>
+<!-- The popup -->
+<div id="mypopup" class="popup">
+
+  <!-- popup content -->
+  <div class="popup-content">
+    <div class="popup-header">
+      <span class="close"></span>
+      <h2>Thankyou For Donating!</h2>
     </div>
-    <div class="col-half">
-      <a href="#" class="btn">Donate</a>
-    </div>
-      </div> -->
-    <form name="aForm" onsubmit="retun validateForm()" method="post">Enter amount to donate<input type="number" min="0" name="fname" class="content"/>
-      <input type="submit" value="submit" class="btn"/></form>  
-    </div>
-  
+  </div>
+</div>
+</div>
+
+<script>
+// Get the popup
+var popup = document.getElementById('mypopup');
+
+// Get the button that opens the popup
+var btn = document.getElementById("btn");
+
+// Get the <span> element that closes the popup
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, if condition satisfied then open the popup 
+btn.onclick = function validateForm() {
+    var x = document.forms["donationForm"]["fname"].value;
+    if (x >= 1) {
+    popup.style.display = "block";
+  }
+}
+// When the user clicks on <span> (x), close the popup
+span.onclick = function() {
+    popup.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the popup, close it
+window.onclick = function(event) {
+    if (event.target == popup) {
+        popup.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>
